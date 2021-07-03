@@ -19,8 +19,6 @@ function App() {
       }
     })
     if(node) observer.current.observe(node)
-    console.log('load More')
-    setPageNumber(prevPageNumber=> prevPageNumber+1)
   },[loading])
   return (
     <>
