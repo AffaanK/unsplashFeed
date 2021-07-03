@@ -11,16 +11,16 @@ function App() {
   const {images,loading,error} = useFetchImage(pageNumber)
   const observer = useRef()
   const lastImageCardRef = useCallback(node=>{
-    // if(loading) return 
-    // if(observer.current) observer.current.disconnect()
-    // observer.current= new IntersectionObserver(entries=>{
-    //   if(entries[0].isIntersecting){
-    //     setPageNumber(prevPagenumber=>{return prevPagenumber+1})
-    //   }
-    // })
-    // if(node) observer.current.observe(node)
-    // console.log('load More')
-    // setPageNumber(prevPageNumber=> prevPageNumber+1)
+    if(loading) return 
+    if(observer.current) observer.current.disconnect()
+    observer.current= new IntersectionObserver(entries=>{
+      if(entries[0].isIntersecting){
+        setPageNumber(prevPagenumber=>{return prevPagenumber+1})
+      }
+    })
+    if(node) observer.current.observe(node)
+    console.log('load More')
+    setPageNumber(prevPageNumber=> prevPageNumber+1)
   },[loading])
   return (
     <>
