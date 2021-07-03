@@ -22,6 +22,19 @@ function App() {
   },[loading])
   return (
     <>
+    <header className="inner">
+  <h2><a href="/"><i className="fa fa-camera-retro" />
+      UnsplashFeed</a></h2>
+  <nav>
+    <ul>
+      <li>
+        <a href="/">Home</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
     <div className="container">
 
       {images.map((image,index) => {
@@ -30,7 +43,7 @@ function App() {
         {
           return (
             <div ref={lastImageCardRef} key={index} className="image-card">
-              <header className="App-header">
+              <div className="App-header">
                 <ul>
                   <li>
                     <img src={image.urls.thumb} className="App-logo" style={{ height: "auto", width: "200px" }} alt="logo" />
@@ -45,7 +58,7 @@ function App() {
                 <div className="tech">
                   <small>Credits: <span>{image.user.first_name}</span></small>
                 </div>
-              </header>
+              </div>
             </div>
           )
         }else{
@@ -77,13 +90,13 @@ function App() {
                     <span style={{paddingRight:'5px'}}>{image.user.first_name}</span>
                     </span>
                   <a style={{ paddingRight: '5px' }} href={image.user.social.portfolio_url} target="_blank" rel="noopener noreferrer" >
-                    <i class="fa fa-camera"></i>
+                    <i className="fa fa-camera"></i>
                     </a>
                   <a style={{paddingRight:'5px'}} href={`https://instagram.com/${image.user.social.instagram_username}`} target="_blank" rel="noopener noreferrer" >
-                    <i class="fa fa-instagram"></i>
+                    <i className="fa fa-instagram"></i>
                     </a>
                   <a style={{paddingRight:'5px'}} href={`https://twitter.com/${image.user.social.twitter_username}`} target="_blank" rel="noopener noreferrer" >
-                    <i class="fa fa-twitter"></i>
+                    <i className="fa fa-twitter"></i>
                     </a>
                   &nbsp;
                 </div>
