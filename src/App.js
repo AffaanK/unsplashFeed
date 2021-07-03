@@ -63,15 +63,17 @@ function App() {
           )
         }else{
           return (
-            <div key={index} className="image-card"
-              onClick={()=>{
-                setSelectedImage(image.urls.full)
-              }}
-            >
+            <div key={index} className="image-card">
               <div className="App-header">
                 <ul>
                   <li>
-                    <img src={image.urls.thumb} className="App-logo" style={{ height: "auto", width: "200px" }} alt="logo" />
+                    <img 
+                     onClick={()=>{
+                      setSelectedImage(image.urls.full)
+                    }}
+                    src={image.urls.thumb} className="App-logo"
+                     style={{ height: "auto", width: "200px" }}
+                      alt="logo" />
                   </li>
                   <li>
                     <h5>image description:</h5>
