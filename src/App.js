@@ -74,12 +74,19 @@ function App() {
                   <img
                   className="avatar"
                       src={image.user.profile_image.small}
+                      alt="profile_img"
                     />
                     <span style={{paddingRight:'5px'}}>{image.user.first_name}</span>
                     </span>
-                  <a style={{ paddingRight: '5px' }} href={image.user.social.portfolio_url} target="_blank" class="fa fa-camera"></a>&nbsp;
-                  <a style={{paddingRight:'5px'}} href={`https://instagram.com/${image.user.social.instagram_username}`} target="_blank" class="fa fa-instagram"></a>&nbsp;
-                  <a style={{paddingRight:'5px'}} href={`https://twitter.com/${image.user.social.twitter_username}`} target="_blank" class="fa fa-twitter"></a>&nbsp;
+                  <a style={{ paddingRight: '5px' }} href={image.user.social.portfolio_url} target="_blank" rel="noopener noreferrer" >
+                    <i class="fa fa-camera"></i>
+                    </a>
+                  <a style={{paddingRight:'5px'}} href={`https://instagram.com/${image.user.social.instagram_username}`} target="_blank" rel="noopener noreferrer" >
+                    <i class="fa fa-instagram"></i>
+                    </a>
+                  <a style={{paddingRight:'5px'}} href={`https://twitter.com/${image.user.social.twitter_username}`} target="_blank" rel="noopener noreferrer" >
+                    <i class="fa fa-twitter"></i>
+                    </a>
                   &nbsp;
                 </div>
               </div>
